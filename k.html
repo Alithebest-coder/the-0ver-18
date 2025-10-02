@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head><title>welcome to javascript</title></head>
+    <body>
+        <h1>validaton in javascript</h1>
+            <P id="k"></P>
+            <form name="vform" onsubmit="return validateform()">
+                Name: <input type="text" name="name"><br>
+                Password: <input type="password" name="password"><br>
+                <input type="submit" value="submit">
+            </form>
+        <script>
+            function validateform(){
+                var name=document.vform.name.value;
+                var password=document.vform.password.value;
+                if(name==null || name==""){
+                    document.getElementById("k").innerHTML="Name can't be blank";
+                    return false;
+                }else if(password.length<6){
+                    document.getElementById("k").innerHTML="Password must be at least 6 characters long.";
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
